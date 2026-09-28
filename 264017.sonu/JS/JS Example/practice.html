@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for=""/>Even Number</label>
+    <input type="number" id="evenNum" name="evenNum" placeholder="Enter Even Number">
+    <button onclick="getEvenNumber()">Submit</button>
+    <label for=""/>Odd Number</label>
+    <input type="number" id="oddNum" name="oddNum" placeholder="Enter Odd Number">
+    <button onclick="getOddNumber()">Submit</button>
+    <script>
+        function getEvenNumber(){
+            var evenNum = document.getElementById("evenNum").value;
+            if(evenNum % 2 === 0){
+                alert(evenNum + " is an Even Number");
+            }else{
+                alert(evenNum + " is not an Even Number");
+            }
+        }
+
+        function getOddNumber(){
+            var oddNum = document.getElementById("oddNum").value;
+            if(oddNum % 2 !== 0){
+                alert(oddNum + " is an Odd Number");
+            }else{
+                alert(oddNum + " is not an Odd Number");
+            }
+        }
+    </script>
+</body>
+</html>
