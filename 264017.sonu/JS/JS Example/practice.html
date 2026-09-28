@@ -11,23 +11,26 @@
     <button onclick="getEvenNumber()">Submit</button>
     <label for=""/>Odd Number</label>
     <input type="number" id="oddNum" name="oddNum" placeholder="Enter Odd Number">
-    <button onclick="getOddNumber()">Submit</button>
+    <button onclick="getOddNumber()">odd Submit</button>
+    <button onclick="getEvenNumber()">evenSubmit</button>
+
+    <p id="result"></p>
     <script>
         function getEvenNumber(){
             var evenNum = document.getElementById("evenNum").value;
             if(evenNum % 2 === 0){
-                alert(evenNum + " is an Even Number");
+                document.getElementById("result").innerHTML = evenNum + " is an Even Number";
             }else{
-                alert(evenNum + " is not an Even Number");
+                document.getElementById("result").innerHTML = evenNum + " is not an Even Number";
             }
         }
 
         function getOddNumber(){
             var oddNum = document.getElementById("oddNum").value;
             if(oddNum % 2 !== 0){
-                alert(oddNum + " is an Odd Number");
+                document.getElementById("result").innerHTML = oddNum + " is an Odd Number"; 
             }else{
-                alert(oddNum + " is not an Odd Number");
+                document.getElementById("result").innerHTML = oddNum + " is not an Odd Number";
             }
         }
     </script>
