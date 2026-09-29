@@ -42,7 +42,7 @@ int main(){
                     printf("Stack is empty\n");
                     break;
                 }else{
-                    struct node * temp;
+                    struct node *temp;
                     temp = top;
                     printf("Stack elements: ");
                     while(temp != NULL){
@@ -51,7 +51,13 @@ int main(){
                     }
                     printf("\n");
                 }
-                break;       
+                break;      
+            case 4:
+                exit(0);
+                break;
+            default:
+                printf("Invalid choice\n");
+                break;
         }
     }
 }
