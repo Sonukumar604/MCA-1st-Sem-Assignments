@@ -1,3 +1,111 @@
-let arr={
-    
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>html list</title>
+        <style>
+             #main{
+                   color:#1b6c1d;
 }
+             table,th,td{
+                  border:2px solid black;
+                  border-collapse:collapse;
+}
+             h1{
+                color:#a32d23;
+}
+             
+        </style>
+    </head>
+    <body>
+        <h1 id="main">Employee Record
+            <a href="#">Go to linkdin</a>
+        </h1>
+        
+        <table>
+            <tr>
+                <td colspan="3" style="border:none"> 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81bNIEaGCzdwl2QV5sIrD4JXpsyk1smkr4psQ6MhDvA8lGy5_6Y4sEyk&s=10" alt="girls photo click" width="300px" higth="200px">
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2">Employee</th>
+                <th colspan="3">Monhly Performance</th>
+            </tr>
+            <tr>
+                <th>January</th>
+                <th>February</th>
+                <th>March</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>$5000</td>
+                <td>6000</td>
+                <td>$5500</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>$7000</td>
+                <td>$7500</td>
+                <td>$8000</td>
+            </tr>
+            <tr>
+                <td>Michael Johnson</td>
+                <td>$4500</td>
+                <td>$5000</td>
+                <td>$4700</td>
+            </tr>
+            <tr>
+                <td>Emily Brown</td>
+                <td>$6200</td>
+                <td>$6300</td>
+                <td>$6500</td>
+            </tr>
+       </table>
+      
+        <h1>HTML Lists</h1>
+        <ul>
+            <li style="color:#e96c56">Fruits
+                <ol style="list-style: lower-alpha">
+                    <li style="color:#eba63e">Apple
+                         <ul> 
+                             <li style="color:#e46d53">Red apple</li>
+                             <li style="color:#e46d53">Green apple</li>
+                         </ul> 
+                    </li>
+                    <li style="color:#eba63e">Banana
+                        <ol style="list-style: lower-roman">
+                            <li style="color:#7f31c2">Green bananas</li>
+                            <li style="color:#7f31c2">Ripe bananas</li>
+                        </ol>
+                    </li>
+                    <li style="color:#eba63e">Cherries</li>
+                </ol>
+            </li>
+            <li style="color:#e46d53">Vegetables
+                <ol> 
+                    <li style="color:#3dc062">Carrots</li>
+                    <li style="color:#3dc062">Potatos
+                        <ul>
+                            <li style="color:#e46d53">Sweet Potatos</li>
+                            <li style="color:#e46d53">Regular Potatos</li>
+                        </ul> 
+                    </li>
+                    <li style="color:#3dc062">Tomatos</li>
+                </ol>
+            </li>
+            <li style="color:#3dc062">Grains
+                <ol style="list-style: lower-roman; color:#7f31c2">
+                    <li>Rice</li>
+                    <li>Wheat</li>
+                </ol>
+            </li>
+            <li style="color:#3dc062">Legumes
+                <dl>
+                    <dt>Beans</dt>
+                    <dd>Commonly used in various cuisines </dd>
+               </dl>
+            </li>
+        </ul>
+    </body>
+</html>
