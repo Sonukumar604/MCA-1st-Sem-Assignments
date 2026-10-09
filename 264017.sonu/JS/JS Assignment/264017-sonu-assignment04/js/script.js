@@ -20,6 +20,7 @@ divo.innerHTML = opt3;
 }
 function AddStudent(){
     let opt4 = "";
+    let opt5 = "";
     let divo = document.getElementById("output1")
     let name = document.getElementById("name").value;
     let rollNumber = Number(document.getElementById("rollNumber").value);
@@ -27,7 +28,12 @@ function AddStudent(){
     if(name != "" && rollNumber != "" && marks != ""){
         let newStudent = { Name: name, RollNumber: rollNumber, Marks: marks };
         studentDetails.push(newStudent);
-        console.log(studentDetails);
+        //console.log(studentDetails);\
+        opt5 = `<p> Name: ${newStudent.Name} </p>
+                <p> Roll Number: ${newStudent.RollNumber} </p>
+                <p> Marks: ${newStudent.Marks} </p>`;
+
+        divo.innerHTML = opt5;
     }else{
         alert("Please fill all the fields");
     }
