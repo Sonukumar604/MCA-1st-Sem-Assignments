@@ -16,25 +16,10 @@ int main(){
         printf("Enter your choice: ");
         scanf("%d", & ch);
         switch(ch){
-            case 1:
-                printf("Enter the item to be insert: ");
-                scanf("%d", & item);
-                if(rear == NULL){
-                    struct node *newnode;
-                    newnode = (struct node*)malloc(sizeof(struct node));
-                    newnode->info = item;
-                    newnode->link = NULL;
-                    top = newnode;
-                    rear = newnode;
-                }else{
-                    struct node *newnode;
-                    newnode = (struct node*)malloc(sizeof(struct node));
-                    newnode->info = item;
-                    newnode->link = NULL;
-                    rear->link = newnode;
-                    rear = newnode;
-                }
-                break;
+           // case 1: Push at Specific position
+           case1:
+                if(top)
+                
             case 2:
                 if(top == NULL){
                     printf("Queue is empty\n");

@@ -39,6 +39,9 @@ function AddStudent(){
 function FindHighestMarks(){
     let opt6 = "";
     let divo = document.getElementById("output2")
-    
+    let highestMarks = 0;
+    let highestStudent = {};
+    for(let )
+
 
 }
