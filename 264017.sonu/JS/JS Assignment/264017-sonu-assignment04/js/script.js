@@ -15,8 +15,6 @@ for (let i in studentDetails) {
     `;
 }
 divo.innerHTML = opt3;
-
-
 }
 function AddStudent(){
     let opt4 = "";
@@ -38,6 +36,9 @@ function AddStudent(){
         alert("Please fill all the fields");
     }
 }
+function FindHighestMarks(){
+    let opt6 = "";
+    let divo = document.getElementById("output2")
+    
 
-
-
+}
