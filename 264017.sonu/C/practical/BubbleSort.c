@@ -1,25 +1,31 @@
-//WAP to implement bubble sort algorithm in C language
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
     int n;
+    printf("Enter number of elements: ");
     scanf("%d", &n);
     int arr[n];
-
-    for(int i=0; i<n; i++){
-        printf("Enter element %d: ", i+1);
+    for(int i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
         scanf("%d", &arr[i]);
     }
-    for(int i=0; i<n-1; i++){
-        for(int j=0; j<n-i-1; j++){
-            if(arr[j] > arr[j+1]){
+    for(int i = 0; i < n - 1; i++) {
+        bool swapped = false;
+        for(int j = 0; j < n - i - 1; j++) {
+            if(arr[j] > arr[j + 1]) {
                 int temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
             }
+        }
+        if(!swapped) {
+            break;
         }
     }
     printf("Sorted array: ");
-    for(int i=0; i<n; i++){
+    for(int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");
