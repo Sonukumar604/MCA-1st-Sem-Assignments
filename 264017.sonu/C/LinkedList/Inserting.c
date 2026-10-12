@@ -71,7 +71,7 @@ int main(){
                 }
                 break;
             case 4:
-                exit(0);,
+                exit(0);
                 break;
             default:
                 printf("Invalid choice\n");
