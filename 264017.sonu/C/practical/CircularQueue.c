@@ -1,11 +1,8 @@
 #include <stdio.h>
 #define MAX 5
-
 int queue[MAX];
 int front = -1;
 int rear = -1;
-
-
 void enqueue(int value) {
     if ((rear + 1) % MAX == front) {
         printf("Queue Overflow! Cannot insert %d\n", value);
@@ -19,7 +16,6 @@ void enqueue(int value) {
     }
 }
 void dequeue() {
-   
     if (front == -1) {
         printf("Queue Underflow! Queue is empty.\n");
     } else {
@@ -32,8 +28,6 @@ void dequeue() {
         }
     }
 }
-
-
 void display() {
     if (front == -1) {
         printf("Queue is empty.\n");
@@ -49,10 +43,8 @@ void display() {
         printf("\n");
     }
 }
-
 int main() {
     int choice, value;
-    
     do {
         printf("\n--- Circular Queue Menu ---\n");
         printf("1. Insert (Enqueue)\n");
@@ -61,7 +53,6 @@ int main() {
         printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-
         switch (choice) {
             case 1:
                 printf("Enter value to insert: ");
