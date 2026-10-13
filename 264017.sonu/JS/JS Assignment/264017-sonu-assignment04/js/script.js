@@ -53,7 +53,21 @@ function FindHighestMarks(){
                 <p>Marks: ${highestStudent.Marks}</p>`;
                 
     divo.innerHTML = opt6;
+}
+function FindLowestMarks(){
+    let opt7 = "";
+    let divo = document.getElementById("output3");
+    let lowestStudent = studentDetails[0];
 
+    for (let student of studentDetails) {
+        if (student.Marks < lowestStudent.Marks) {
+            lowestStudent = student;
+        }
+    }
+    opt7 = `<p><strong>Lowest Marks:</strong></p>
+                <p>Name: ${lowestStudent.Name}</p>
+                <p>Roll Number: ${lowestStudent.RollNumber}</p>
+                <p>Marks: ${lowestStudent.Marks}</p>`;
 
-
+    divo.innerHTML = opt7;
 }
