@@ -39,9 +39,21 @@ function AddStudent(){
 function FindHighestMarks(){
     let opt6 = "";
     let divo = document.getElementById("output2")
-    let highestMarks = 0;
-    let highestStudent = {};
-    for(let )
+    let highestStudent = studentDetails[0];
+    
+    for (let student of studentDetails) {
+        if (student.Marks > highestStudent.Marks) {
+            highestStudent = student;
+        }
+    }
+
+    opt6 = `<p><strong>Highest Marks:</strong></p>
+                <p>Name: ${highestStudent.Name}</p>
+                <p>Roll Number: ${highestStudent.RollNumber}</p>
+                <p>Marks: ${highestStudent.Marks}</p>`;
+                
+    divo.innerHTML = opt6;
+
 
 
 }
