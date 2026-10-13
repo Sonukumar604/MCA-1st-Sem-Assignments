@@ -71,3 +71,24 @@ function FindLowestMarks(){
 
     divo.innerHTML = opt7;
 }
+function SearchStudent(){
+    let opt8 = "";
+    let divo = document.getElementById("output4");
+    let searchName = document.getElementById("searchName").value;
+
+    for (let student of studentDetails) {
+        if (student.RollNumber == searchName) {
+            opt8 = `<p><strong>Student Found:</strong></p>
+                    <p>Name: ${student.Name}</p>
+                    <p>Roll Number: ${student.RollNumber}</p>
+                    <p>Marks: ${student.Marks}</p>`;
+            break;
+        }
+    }
+
+    if (opt8 === "") {
+        opt8 = `<p><strong>Student Not Found</strong></p>`;
+    }
+
+    divo.innerHTML = opt8;
+}
