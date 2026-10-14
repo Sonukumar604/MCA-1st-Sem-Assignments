@@ -113,3 +113,9 @@ function PassOrFail() {
 
     divo.innerHTML = opt9;
 }
+
+function AverageMarks() {
+
+    let opt10 = "";
+    let divo = document.getElementById("output6");
+    

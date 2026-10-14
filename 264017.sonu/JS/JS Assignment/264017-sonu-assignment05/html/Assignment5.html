@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+   <input type="text" id="name" placeholder="Enter Task">
+   <button type="button" onclick="ToDoList()">Add</button>
+   <div id="output"></div>
+   <script>
+    function ToDoList(){
+
+        let output1=document.getElementById("output");
+        let name=document.getElementById("name").value;
+        let table = document.createElement("table");
+        let tr1 = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.textContent = name;
+        
+        let td2 = document.createElement("td");
+        let btnDelete = document.createElement("button");
+        btnDelete.textContent = "DELETE";
+
+        let td3 = document.createElement("td");
+        let btnEdit = document.createElement("button");
+        btnEdit.textContent = "EDIT"
+
+        table.append(tr1);
+        
+        tr1.append(td1)
+        tr1.append(td2)
+        tr1.append(td3)
+        
+        output1.append(table);
+
+    }
+   </script>
+
+</body>
+
+</html>
