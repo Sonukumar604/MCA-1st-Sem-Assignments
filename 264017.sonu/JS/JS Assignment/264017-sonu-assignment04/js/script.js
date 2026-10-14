@@ -1,8 +1,8 @@
 const studentDetails = [
-    { Name: "Aman", RollNumber: 101,  Marks:17 },
-    { Name: "Neha", RollNumber: 102,  Marks:18 },
-    { Name: "Riya", RollNumber: 103,  Marks:19 },
-    { Name: "Neha", RollNumber: 104,  Marks:20 },
+    { Name: "Sweta", RollNumber: 101,  Marks:60 },
+    { Name: "Khushi", RollNumber: 102,  Marks:70 },
+    { Name: "Khushpreet", RollNumber: 103,  Marks:38 },
+    { Name: "Supriya", RollNumber: 104,  Marks:20 },
 ];
 function Display(){
     let opt3 = "";
@@ -91,4 +91,25 @@ function SearchStudent(){
     }
 
     divo.innerHTML = opt8;
+}
+function PassOrFail() {
+    let opt9 = "";
+    let divo = document.getElementById("output5");
+    let rollNumber = document.getElementById("passFailName").value;
+    for(let student of studentDetails){
+        if(student.RollNumber == rollNumber){
+            if(student.Marks >= 10){
+                opt9 = `<p><strong>Student is Pass</strong></p>`;
+            } else {
+                opt9 = `<p><strong>Student is Fail</strong></p>`;
+            }
+            break;
+        }
+    }
+
+    if (opt9 === "") {
+        opt9 = `<p><strong>Student Not Found</strong></p>`;
+    }
+
+    divo.innerHTML = opt9;
 }
