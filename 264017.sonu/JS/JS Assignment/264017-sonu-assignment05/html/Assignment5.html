@@ -1,58 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style href="">
+
+    </style>
 </head>
+
 <body>
     <h1>To-Do List</h1>
-   <input type="text" id="name" placeholder="Enter Task">
-   <button type="button" onclick="ToDoList()">Add</button>
-   <div id="output"></div>
-   <script>
-    function ToDoList(){
+    <input type="text" id="name" placeholder="Enter Task">
+    <button type="button" onclick="ToDoList()">Add</button>
+    <div id="output"></div>
+    <script>
+        function ToDoList() {
 
-        let output1=document.getElementById("output");
-        let name=document.getElementById("name").value;
-        let table = document.createElement("table");
-        let tr1 = document.createElement("tr");
-        let td1 = document.createElement("td");
-        td1.textContent = name;
-        
-        let td2 = document.createElement("td");
-        let btnDelete = document.createElement("button");
-        btnDelete.id = "btnDelete";
-        btnDelete.textContent = "DELETE";
-        td2.append(btnDelete);
-        btnDelete.addEventListener("click", function(){
-            tr1.remove();
-        })
+            let output1 = document.getElementById("output");
+            let name = document.getElementById("name").value;
+            let table = document.createElement("table");
+            let tr1 = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.textContent = name;
 
-        let td3 = document.createElement("td");
-        let btnEdit = document.createElement("button");
-        btnEdit.id = "btnEdit";
-        btnEdit.textContent = "EDIT"
-        td2.append(btnEdit);
-        btnEdit.addEventListener("click", ()=>{
+            let td2 = document.createElement("td");
+            let btnDelete = document.createElement("button");
+            btnDelete.id = "btnDelete";
+            btnDelete.textContent = "DELETE";
+            td2.append(btnDelete);
+            btnDelete.addEventListener("click", function () {
+                tr1.remove();
+            })
+
+            let td3 = document.createElement("td");
+            let btnEdit = document.createElement("button");
+            btnEdit.id = "btnEdit";
+            btnEdit.textContent = "EDIT"
+            td2.append(btnEdit);
+            btnEdit.addEventListener("click", () => {
+                if (btnEdit.innerText == "EDIT") {
+                    let input = document.createElement("input");
+                    input.type = "text";
+                    input.id = "txtinput1";
+                    input.value = td1.innerText;
+                    td1.innerText = "";
+                    td1.append(input);
+                    btnEdit.innerText = "Save";
+                } else {
+                    let input2 = document.querySelector('#txtinput1').value;
+                    td1.textContent = input2 
+                    btnEdit.innerText = "Edit"
+
+
+
+                }
+
+            }
             
-            let input = document.createElement("input");
-            input.type = "text";
-            input.value = td2.innerText;
-            td1.innerText="";
-            td1.append(input); 
-        })
+        
+        )
 
         table.append(tr1);
-        
+
         tr1.append(td1)
         tr1.append(td2)
         tr1.append(td3)
-        
+
         output1.append(table);
 
     }
-   </script>
+    </script>
 
 </body>
 
