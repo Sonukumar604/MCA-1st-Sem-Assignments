@@ -6,67 +6,105 @@
     <title>Student Result Management</title>
 </head>
 <body>
-    <h1>Display All Students (Using For-of or For-in loop)</h1>
-    
-    <div class="All Students">
-        <h1>1. Student Result Management</h1>
-        <div><button type="button" onclick="Display()">Display Students</button></div>
-        <div id="output"></div>
+    <section>
+        <div id="head">
+            <h1>Student Result Management</h1>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>1. Display All Student(Using For-Of or For-In loop)</h1>
+            <button onclick="showstudent()">Display Student</button>
+            <div class="result" id="result1">
 
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>2. Add New Student</h1>
+            <input type="text" name="name" id="studentname" placeholder="Student Name">
+            <input type="number" name="rollno." id="rollno" placeholder="Roll Number">
+            <input type="number" name="marks" id="marks" placeholder="Marks">
+            <button onclick="addstudent()">Add Student</button><br>
+            <div class="result" id="add-student">
 
-    <div class="Add New Students">
-        <h1>2. Add New Students</h1>
-        <input type="text" id="name" placeholder="Enter Student Name">
-        <input type="text" id="rollNumber" placeholder="Enter Student Roll No">
-        <input type="text" id="marks" placeholder="Enter Student Marks">
-        <button type="button" onclick="AddStudent()">Add Student</button>
-        <div id="output1"></div>
-        
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>3. Find Highest Marks</h1>
+            <button onclick="findhighestmarks()">Find Highest</button>
+            <div class="result" id="hmarks">
 
-    <div class="Find Highest Marks">
-        <h1>3. Find Highest Marks</h1>
-        <button type="button" onclick="FindHighestMarks()">Find Highest Marks</button>
-        <div id="output2"></div>
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>4. Find Lowest Marks</h1>
+            <button onclick="findlowestmarks()">Find Lowest</button>
+            <div class="result" id="low-marks">
 
-    <div class="Find Lowest Marks">
-        <h1>4. Find Lowest Marks</h1>
-        <button type="button" onclick="FindLowestMarks()">Find Lowest Marks</button>
-        <div id="output3"></div>
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>4. Search Student</h1>
+            <input type="text" name="" id="seastd" placeholder="EnterRoll Number">
+            <button onclick="searchstudent()">Search</button>
+            <div class="result" id="see-std">
 
-    <div class="Search Student">
-        <h1>5. Search Student</h1>
-        <input type="text" id="searchName" placeholder="Enter Student Roll No. to Search">
-        <button type="button" onclick="SearchStudent()">Search Student</button>
-        <div id="output4"></div>
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>6. Pass or Fail</h1>
+            <button onclick="result()">Cheak Result</button>
+            <div class="result" id="result-pas">
 
-    <div class="PassorFail">
-        <h1>6. Pass-Or-Fail</h1>
-        <input type="text" id="passFailName" placeholder="Enter Student Roll No. to Check Pass/Fail">
-        <button type="button" onclick="PassOrFail()">Check Pass/Fail</button>
-        <div id="output5"></div>
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>7. Average Marks</h1>
+            <button onclick="average()">Calculate Average</button>
+            <div class="result" id="avd-marks">
 
-    <div class="Average Marks">
-        <h1>7. Average Marks</h1>
-        <button type="button" onclick="AverageMarks()">Calculate Average Marks</button>
-        <div id="output6"></div>
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>8. Student Above 80 Marks</h1>
+            <button onclick="marksabove()">Display Students</button>
+            <div class="result" id="80-above">
 
-    <div class="Students Above 80 Marks">
-        <h1>8. Students Above 80 Marks</h1>
-        <button type="button" onclick="StudentsAboveAverage()">Find Students Above 80 Marks</button>
-        <div id="output7"></div>
-    </div>
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>9. Object Properties - For...in</h1>
+            <button onclick="objpro()">Show Object</button>
+            <div class="result" id="obj-pro">
 
-    <div class="Other"
+            </div>
+        </div>
+    </section>
+    <section class="std-sec">
+        <div class="dis-std">
+            <h1>10. Array Method</h1>
+            <button onclick="arr()">Cheak Result</button>
+            <div class="result" id="arr-mtd">
 
-
-
+            </div>
+        </div>
+    </section>
 
 </body>
 <script src="../js/script.js"></script> 
