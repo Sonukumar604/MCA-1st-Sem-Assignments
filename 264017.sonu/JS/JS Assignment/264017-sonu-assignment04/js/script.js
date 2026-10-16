@@ -114,8 +114,30 @@ function PassOrFail() {
     divo.innerHTML = opt9;
 }
 
-function AverageMarks() {
+function marksabove() {
+    let marks80 = "";
+    for (let i of displaystudent) {
+        if (i.std_Marks > 80) {
+            marks80 += `<b>${i.std_Name} - ${i.std_Marks}</b><br>`
+        }
+    }
+    document.getElementById("80-above").innerHTML = marks80;
+}
 
-    let opt10 = "";
-    let divo = document.getElementById("output6");
-    
+function objpro() {
+    for (let i in displaystudent[0]) {
+        document.getElementById("obj-pro").innerHTML += `<b>${i} = ${displaystudent[0][i]}<br>`
+    }
+
+}
+
+function arr() {
+    let arry = "";
+    let count1 = displaystudent.length;
+    for (let i of displaystudent) {
+        arry += i.std_Name + " , ";
+    }
+    document.getElementById("arr-mtd").innerHTML =
+        `<b>Student Name: ${arry}<br><br>
+    Total Student: ${count1}</b> `
+}
