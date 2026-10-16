@@ -22,11 +22,26 @@
         
         let td2 = document.createElement("td");
         let btnDelete = document.createElement("button");
+        btnDelete.id = "btnDelete";
         btnDelete.textContent = "DELETE";
+        td2.append(btnDelete);
+        btnDelete.addEventListener("click", function(){
+            tr1.remove();
+        })
 
         let td3 = document.createElement("td");
         let btnEdit = document.createElement("button");
+        btnEdit.id = "btnEdit";
         btnEdit.textContent = "EDIT"
+        td2.append(btnEdit);
+        btnEdit.addEventListener("click", ()=>{
+            
+            let input = document.createElement("input");
+            input.type = "text";
+            input.value = td2.innerText;
+            td1.innerText="";
+            td1.append(input); 
+        })
 
         table.append(tr1);
         
