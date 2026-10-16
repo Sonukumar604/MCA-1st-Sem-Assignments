@@ -1,0 +1,78 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+/* head section */
+#head {
+    background-color: #007bff;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-size: x-large;
+}
+
+/* student section */
+.std-sec {
+    display: flex;
+    justify-content: center;
+}
+
+.dis-std {
+    border: 2px solid white;
+    background-color: white;
+    margin-top: 50px;
+    width: 880px;
+}
+
+.dis-std h1 {
+    color: #007bff;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.dis-std input {
+    margin-left: 20px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+
+#name-err {
+    margin-left: 20px;
+    color: red;
+}
+
+#rollno-err {
+    margin-left: 100px;
+    color: red;
+}
+
+#marks-err {
+    margin-left: 75px;
+    color: red;
+}
+
+.dis-std button {
+    background-color: #007bff;
+    color: white;
+    width: 142px;
+    border: 2px solid #007bff;
+    padding: 15px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.result {
+    border: 2px solid #f2f2f2;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
