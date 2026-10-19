@@ -1,14 +1,16 @@
-import MyFirstComponent from "./components/MyFirstComponent"
 
-function App() {
+import MyProfile from "./components/MyProfile"
 
-
+function App(){
   return (
     <>
-      <h1>Hero</h1>
-     <MyFirstComponent/>
+      
+    <MyProfile  name="Sonu" class="MCA" College="MAIMT"/>
+      <h1> This is my first App</h1>
+     
     </>
   )
 }
+
 
 export default App
