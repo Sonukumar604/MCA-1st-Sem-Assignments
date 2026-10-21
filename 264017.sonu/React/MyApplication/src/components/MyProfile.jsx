@@ -5,9 +5,11 @@ const MyProfile = (props) => {
   return (
     <div>
       <h1>My profile</h1>
-      <h1>Name:{props.name}</h1>
-      <h1>Class: {props.class}</h1>
-      <h1>College: {props.College}</h1>
+      <h1>Name:{props.studentDetails.name}</h1>
+      <h1>Class: {props.studentDetails.class}</h1>
+      <h1>College: {props.studentDetails.college}</h1>
+      <h2>My Subjects:</h2>
+      
     </div>
   )
 }

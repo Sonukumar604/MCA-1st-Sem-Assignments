@@ -3,7 +3,7 @@ import MyProfile from "./components/MyProfile"
 
 function App(){
 const details={
-  nameOfTeacher:"Sonu kumar",
+  name:"Sonu kumar",
   class:"MCA",
   college:"MAIMT"
 };
@@ -12,7 +12,7 @@ let subjects=["JAVA", "DS", "CST"];
   return (
     <>
       
-    <MyProfile  studentDetails={details} skils={subjects}/>
+    <MyProfile  studentDetails={details} skills={subjects}/>
       <h1> This is my first App</h1>
     </>
   )
