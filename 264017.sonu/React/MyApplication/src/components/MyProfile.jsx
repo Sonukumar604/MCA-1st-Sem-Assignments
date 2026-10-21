@@ -10,8 +10,11 @@ const MyProfile = (props) => {
       <h1>College: {props.studentDetails.college}</h1>
       <h2>My Subjects:</h2>
       
+      {props.skills.map((subjects,index)=>(
+        <h3 key={index}>{subjects}</h3>
+      ))}
     </div>
   )
 }
 
-export default MyProfile
+export default MyProfile;

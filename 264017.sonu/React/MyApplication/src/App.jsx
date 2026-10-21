@@ -7,7 +7,7 @@ const details={
   class:"MCA",
   college:"MAIMT"
 };
-let subjects=["JAVA", "DS", "CST"];
+const subjects=["JAVA", "DS", "CST"];
 
   return (
     <>
