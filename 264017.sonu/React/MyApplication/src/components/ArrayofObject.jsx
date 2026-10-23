@@ -1,9 +1,9 @@
-function arrayofObject(){
-  
+import React from 'react'
 
-    return(
-        <>
-        <style>
+const ArrayofObject = () => {
+  return (
+    <div>
+         <style>
             {
                 `
                 h3{
@@ -20,8 +20,9 @@ function arrayofObject(){
             <h3>{students.age}</h3>
         </div>
        })}
-        </>
-       
-    )
+      
+    </div>
+  )
 }
+
 export default ArrayofObject

@@ -1,6 +1,7 @@
 
+import { ConditionalRenedering }  from "./components/ConditionalRendering";
 import MyProfile from "./components/MyProfile"
-import arrayofObject from "./components/arrayofObject"
+
 function App(){
 const details={
   name:"Sonu kumar",
@@ -23,9 +24,12 @@ let students=[
         <li>
           <MyProfile  studentDetails={details} skills={subjects}/>
       <h1> This is my first App</h1>
-      <ArrayofObject/>
+    
+      
         </li>
       </ul>
+      <ConditionalRenedering/>
+      
     </div>
   )
 }
