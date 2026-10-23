@@ -18,12 +18,15 @@ let students=[
 
 
   return (
-    <>
-      
-    <MyProfile  studentDetails={details} skills={subjects}/>
+    <div>
+      <ul>
+        <li>
+          <MyProfile  studentDetails={details} skills={subjects}/>
       <h1> This is my first App</h1>
       <ArrayofObject/>
-    </>
+        </li>
+      </ul>
+    </div>
   )
 }
 
