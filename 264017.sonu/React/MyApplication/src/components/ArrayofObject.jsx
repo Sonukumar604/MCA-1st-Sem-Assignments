@@ -6,10 +6,6 @@ function arrayofObject(){
         <style>
             {
                 `
-                h1{
-                color:"Red;
-                font-size: 50px;
-                }
                 h3{
                 color:"blue;
                 font-size: 30px;
