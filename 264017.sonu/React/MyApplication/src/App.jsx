@@ -1,7 +1,7 @@
 
 import { ConditionalRenedering }  from "./components/ConditionalRendering";
 import MyProfile from "./components/MyProfile"
-
+import State from "./components/State";
 function App(){
 const details={
   name:"Sonu kumar",
@@ -29,6 +29,7 @@ let students=[
         </li>
       </ul>
       <ConditionalRenedering/>
+      <State/>
       
     </div>
   )

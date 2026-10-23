@@ -4,14 +4,14 @@ const State = () => {
     //let name="Sweta"
     const[name, setname] = useState("khushi");
     let changename=()=>{
-        setname("khushi")
+        setname("Supriya")
     }
   return (
-    <div>
+    <>
         <h1>{name}</h1>
-        
+        <button onClick={changename}>{name=="khushi"?"changeName":"nameChanged"}</button>
       
-    </div>
+    </>
   )
 }
 
