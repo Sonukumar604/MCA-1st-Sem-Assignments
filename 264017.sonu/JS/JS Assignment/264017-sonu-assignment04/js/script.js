@@ -1,143 +1,131 @@
 const studentDetails = [
-    { Name: "Sweta", RollNumber: 101,  Marks:60 },
-    { Name: "Khushi", RollNumber: 102,  Marks:70 },
-    { Name: "Khushpreet", RollNumber: 103,  Marks:38 },
-    { Name: "Supriya", RollNumber: 104,  Marks:20 },
+    { Name: "Sweta", RollNumber: 101, Marks: 60 },
+    { Name: "Khushi", RollNumber: 102, Marks: 70 },
+    { Name: "Khushpreet", RollNumber: 103, Marks: 38 },
+    { Name: "Supriya", RollNumber: 104, Marks: 20 },
 ];
-function Display(){
-    let opt3 = "";
-let divo = document.getElementById("output")
-for (let i in studentDetails) {
 
-    opt3 += `<p> Name: ${ studentDetails[i].Name} </p>
-             <p> Roll Number: ${studentDetails[i].RollNumber} </p>
-            <p> Marks: ${studentDetails[i].Marks} </p>
-    `;
+function renderStudent(student) {
+    return `<p>Name: ${student.Name}</p>
+            <p>Roll Number: ${student.RollNumber}</p>
+            <p>Marks: ${student.Marks}</p>`;
 }
-divo.innerHTML = opt3;
-}
-function AddStudent(){
-    let opt4 = "";
-    let opt5 = "";
-    let divo = document.getElementById("output1")
-    let name = document.getElementById("name").value;
-    let rollNumber = Number(document.getElementById("rollNumber").value);
-    let marks = Number(document.getElementById("marks").value);
-    if(name != "" && rollNumber != "" && marks != ""){
-        let newStudent = { Name: name, RollNumber: rollNumber, Marks: marks };
-        studentDetails.push(newStudent);
-        //console.log(studentDetails);\
-        opt5 = `<p> Name: ${newStudent.Name} </p>
-                <p> Roll Number: ${newStudent.RollNumber} </p>
-                <p> Marks: ${newStudent.Marks} </p>`;
 
-        divo.innerHTML = opt5;
-    }else{
-        alert("Please fill all the fields");
+function showstudent() {
+    let output = "";
+    for (const student of studentDetails) {
+        output += renderStudent(student);
     }
+    document.getElementById("result1").innerHTML = output;
 }
-function FindHighestMarks(){
-    let opt6 = "";
-    let divo = document.getElementById("output2")
-    let highestStudent = studentDetails[0];
-    
-    for (let student of studentDetails) {
-        if (student.Marks > highestStudent.Marks) {
-            highestStudent = student;
-        }
+
+function addstudent() {
+    const nameInput = document.getElementById("studentname");
+    const rollInput = document.getElementById("rollno");
+    const marksInput = document.getElementById("marks");
+    const name = nameInput.value.trim();
+    const rollNumber = Number(rollInput.value);
+    const marks = Number(marksInput.value);
+
+    if (!name || !rollInput.value || !marksInput.value) {
+        document.getElementById("add-student").textContent = "Please fill in all fields.";
+        return;
     }
-
-    opt6 = `<p><strong>Highest Marks:</strong></p>
-                <p>Name: ${highestStudent.Name}</p>
-                <p>Roll Number: ${highestStudent.RollNumber}</p>
-                <p>Marks: ${highestStudent.Marks}</p>`;
-                
-    divo.innerHTML = opt6;
-}
-function FindLowestMarks(){
-    let opt7 = "";
-    let divo = document.getElementById("output3");
-    let lowestStudent = studentDetails[0];
-
-    for (let student of studentDetails) {
-        if (student.Marks < lowestStudent.Marks) {
-            lowestStudent = student;
-        }
-    }
-    opt7 = `<p><strong>Lowest Marks:</strong></p>
-                <p>Name: ${lowestStudent.Name}</p>
-                <p>Roll Number: ${lowestStudent.RollNumber}</p>
-                <p>Marks: ${lowestStudent.Marks}</p>`;
-
-    divo.innerHTML = opt7;
-}
-function SearchStudent(){
-    let opt8 = "";
-    let divo = document.getElementById("output4");
-    let searchName = document.getElementById("searchName").value;
-
-    for (let student of studentDetails) {
-        if (student.RollNumber == searchName) {
-            opt8 = `<p><strong>Student Found:</strong></p>
-                    <p>Name: ${student.Name}</p>
-                    <p>Roll Number: ${student.RollNumber}</p>
-                    <p>Marks: ${student.Marks}</p>`;
+    let duplicateRollNumber = false;
+    for (const student of studentDetails) {
+        if (student.RollNumber === rollNumber) {
+            duplicateRollNumber = true;
             break;
+        } else {
+            continue;
         }
     }
-
-    if (opt8 === "") {
-        opt8 = `<p><strong>Student Not Found</strong></p>`;
+    if (duplicateRollNumber) {
+        document.getElementById("add-student").textContent = "That roll number already exists.";
+        return;
+    }
+    if (marks < 0 || marks > 100) {
+        document.getElementById("add-student").textContent = "Marks must be between 0 and 100.";
+        return;
     }
 
-    divo.innerHTML = opt8;
+    const newStudent = { Name: name, RollNumber: rollNumber, Marks: marks };
+    studentDetails.push(newStudent);
+    document.getElementById("add-student").innerHTML = renderStudent(newStudent);
+    nameInput.value = "";
+    rollInput.value = "";
+    marksInput.value = "";
 }
-function PassOrFail() {
-    let opt9 = "";
-    let divo = document.getElementById("output5");
-    let rollNumber = document.getElementById("passFailName").value;
-    for(let student of studentDetails){
-        if(student.RollNumber == rollNumber){
-            if(student.Marks >= 10){
-                opt9 = `<p><strong>Student is Pass</strong></p>`;
-            } else {
-                opt9 = `<p><strong>Student is Fail</strong></p>`;
-            }
-            break;
+
+function findhighestmarks() {
+    let student = studentDetails[0];
+    for (const current of studentDetails) {
+        if (current.Marks > student.Marks) {
+            student = current;
+        } else {
+            continue;
         }
     }
+    document.getElementById("hmarks").innerHTML = renderStudent(student);
+}
 
-    if (opt9 === "") {
-        opt9 = `<p><strong>Student Not Found</strong></p>`;
+function findlowestmarks() {
+    let student = studentDetails[0];
+    for (const current of studentDetails) {
+        if (current.Marks < student.Marks) {
+            student = current;
+        } else {
+            continue;
+        }
     }
+    document.getElementById("low-marks").innerHTML = renderStudent(student);
+}
 
-    divo.innerHTML = opt9;
+function searchstudent() {
+    const rollNumber = Number(document.getElementById("seastd").value.trim());
+    let output = "Student not found.";
+    for (const student of studentDetails) {
+        if (student.RollNumber === rollNumber) {
+            output = renderStudent(student);
+            break;
+        } else {
+            continue;
+        }
+    }
+    document.getElementById("see-std").innerHTML = output;
+}
+
+function result() {
+    let output = "";
+    for (const student of studentDetails) {
+        if (student.Marks >= 40) {
+            output += `<p>${student.Name} (${student.RollNumber}): Pass</p>`;
+        } else {
+            output += `<p>${student.Name} (${student.RollNumber}): Fail</p>`;
+        }
+    }
+    document.getElementById("result-pas").innerHTML = output;
+}
+
+function average() {
+    let total = 0;
+    for (const student of studentDetails) {
+        total += student.Marks;
+    }
+    document.getElementById("avd-marks").textContent = `Average marks: ${(total / studentDetails.length).toFixed(2)}`;
 }
 
 function marksabove() {
-    let marks80 = "";
-    for (let i of displaystudent) {
-        if (i.std_Marks > 80) {
-            marks80 += `<b>${i.std_Name} - ${i.std_Marks}</b><br>`
+    let output = "";
+    for (const student of studentDetails) {
+        if (student.Marks > 80) {
+            output += renderStudent(student);
+        } else {
+            continue;
         }
     }
-    document.getElementById("80-above").innerHTML = marks80;
-}
-
-function objpro() {
-    for (let i in displaystudent[0]) {
-        document.getElementById("obj-pro").innerHTML += `<b>${i} = ${displaystudent[0][i]}<br>`
+    if (output === "") {
+        output = "No students scored above 80.";
     }
-
-}
-
-function arr() {
-    let arry = "";
-    let count1 = displaystudent.length;
-    for (let i of displaystudent) {
-        arry += i.std_Name + " , ";
-    }
-    document.getElementById("arr-mtd").innerHTML =
-        `<b>Student Name: ${arry}<br><br>
-    Total Student: ${count1}</b> `
+    document.getElementById("80-above").innerHTML = output;
 }
