@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './Counter.css';
 
-const Counter = () => {
-    const [count,setCount]=useState(0);
-    const increment =()=>{
-        
-    }
+export default function Counter() {
+  const [count, setCount] = useState(0);
+
   return (
-    <div>
-      <h1>counter:{count}</h1>
-      <button>count+1</button>
-      <button>count-1</button>
-    </div>
-  )
-}
+    <div className="counter-container">
+      <h2>React Counter App</h2>
+      <div className="counter-display">{count}
+        
+      </div>
+      <div className="counter-buttons">
+        <button onClick={() => setCount(count - 1)}>-</button>
 
-export default Counter
+        <button onClick={() => setCount(0)}>Reset</button>
+        <button 
+        onClick={() => setCount(count + 1)}>+</button>
+      </div>
+    </div>
+  );
+}

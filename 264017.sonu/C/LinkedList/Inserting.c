@@ -1,83 +1,151 @@
-//Inserting LinkedList using c program
-//1.) Insert at beginning
-#include<stdio.h>
-int main(){
-    struct node{
-        int info;
-        struct node *link;
-    }*top = NULL;
-    int item, ch;
-    while(1){
-        printf("\n1. Insert at beginning\n");
-        printf("2. Insert at end\n");
-        printf("3. Insert at specific position\n");
-        printf("4. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", & ch);
-        switch(ch){
-            case 1:
-                printf("Enter the item to be inserted at beginning: ");
-                scanf("%d", & item);
-                struct node *newnode;
-                newnode = (struct node*)malloc(sizeof(struct node));
-                newnode->info = item;
-                newnode->link = top;
-                top = newnode;
-                break;
-            case 2:
-                // Code for inserting at end
-                printf("Enter the item to be inserted at end: ");
-                scanf("%d", &item);
-                struct node *newnode_end;
-                newnode_end = (struct node*)malloc(sizeof(struct node));
-                newnode_end->info = item;
-                newnode_end->link = NULL;
-                if(top == NULL){
-                    top = newnode_end;
-                } else {
-                    struct node *ptr = top;
-                    while(ptr->link != NULL){
-                        ptr = ptr->link;
-                    }
-                    ptr->link = newnode_end;
-                }
-                break;
-            case 3:
-                // Code for inserting at specific position
-                printf("Enter the position where you want to insert: ");
-                int pos;
-                scanf("%d", &pos);
-                printf("Enter the item to be inserted: ");
-                int item;
-                scanf("%d", &item);
-                struct node *newnode_pos;
-                newnode_pos = (struct node*)malloc(sizeof(struct node));
-                newnode_pos->info = item;
-                newnode_pos->link = NULL;
-                if(pos == 0){
-                    newnode_pos->link = top;
-                    top = newnode_pos;
-                } else {
-                    struct node *ptr = top;
-                    for(int i = 0; i < pos - 1 && ptr != NULL; i++){
-                        ptr = ptr->link;
-                    }
-                    if(ptr != NULL){
-                        newnode_pos->link = ptr->link;
-                        ptr->link = newnode_pos;
-                    } else {
-                        printf("Position out of bounds\n");
-                    }
-                }
-                break;
-            case 4:
-                exit(0);
-                break;
-            default:
-                printf("Invalid choice\n");
-                break;
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int inserting{
+
+
+    struct Node {
+        int data;
+        struct Node* next;
+    };
+
+
+    struct Node* createNode(int value) {
+        struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+        if (newNode == NULL) {
+            printf("Memory allocation failed!\n");
+            exit(1);
         }
+        newNode->data = value;
+        newNode->next = NULL;
+        return newNode;
     }
-    return 0;
+
+
+    void insertAtBeginning(struct Node** head, int value) {
+        struct Node* newNode = createNode(value);
+        newNode->next = *head;
+        *head = newNode;
+        printf("Inserted %d at the beginning.\n", value);
+    }
+
+
+    void insertAtEnd(struct Node** head, int value) {
+        struct Node* newNode = createNode(value);
+        if (*head == NULL) {
+            *head = newNode;
+        } else {
+            struct Node* temp = *head;
+            while (temp->next != NULL) {
+                temp = temp->next;
+            }
+            temp->next = newNode;
+        }
+        printf("Inserted %d at the end.\n", value);
+    }
 }
 
+void insertAtPosition(struct Node** head, int value, int pos) {
+    if (pos < 1) {
+        printf("Invalid position!\n");
+        return;
+    }
+
+    if (pos == 1) {
+        insertAtBeginning(head, value);
+        return;
+    }
+
+    struct Node* newNode = createNode(value);
+    struct Node* temp = *head;
+
+    
+    for (int i = 1; i < pos - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == NULL) {
+        printf("Position out of range!\n");
+        free(newNode);
+    } else {
+        newNode->next = temp->next;
+        temp->next = newNode;
+        printf("Inserted %d at position %d.\n", value, pos);
+    }
+}
+
+
+void display(struct Node* head) {
+    if (head == NULL) {
+        printf("The linked list is empty.\n");
+        return;
+    }
+    struct Node* temp = head;
+    printf("Linked List: ");
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node* head = NULL;
+    int choice, value, pos;
+
+    do {
+        printf("\n--- Linked List Menu ---\n");
+        printf("1. Insert at Beginning\n");
+        printf("2. Insert at End\n");
+        printf("3. Insert at Specific Position\n");
+        printf("4. Display List\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to insert: ");
+                scanf("%d", &value);
+                insertAtBeginning(&head, value);
+                break;
+
+            case 2:
+                printf("Enter value to insert: ");
+                scanf("%d", &value);
+                insertAtEnd(&head, value);
+                break;
+
+            case 3:
+                printf("Enter value to insert: ");
+                scanf("%d", &value);
+                printf("Enter position: ");
+                scanf("%d", &pos);
+                insertAtPosition(&head, value, pos);
+                break;
+
+            case 4:
+                display(head);
+                break;
+
+            case 5:
+                printf("Exiting program.\n");
+                break;
+
+            default:
+                printf("Invalid choice! Please enter a number between 1 and 5.\n");
+        }
+    } while (choice != 5);
+
+    // Free allocated memory before exiting (good practice)
+    struct Node* current = head;
+    struct Node* nextNode;
+    while (current != NULL) {
+        nextNode = current->next;
+        free(current);
+        current = nextNode;
+    }
+
+    return 0;
+}
