@@ -1,5 +1,6 @@
 ﻿import { ConditionalRenedering } from "./components/ConditionalRendering";
 import Counter from "./components/Counter";
+import Dform from "./components/Dform";
 import MyProfile from "./components/MyProfile";
 import State from "./components/State";
 
@@ -19,9 +20,10 @@ function App() {
           <h1>This is my first App</h1>
         </li>
       </ul>
-      <ConditionalRenedering />
+      {/* <ConditionalRenedering />
       <State />
-      <Counter />
+      <Counter /> */}
+      <Dform/>
     </div>
   );
 }
