@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function Dform() {
-  const [name, setName] = useState("");
+  const name=useRef("")
   const [submittedName, setSubmittedName] = useState("");
-  const [lname, setlname] = useState("");
-  const [submittedlName, setSubmittedlName] = useState("");
-  const studentName= useRef();
+//   const [lname, setlname] = useState("");
+//   const [submittedlName, setSubmittedlName] = useState("");
+  
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmittedName(name);
+    // setSubmittedName(name);
     
-    setSubmittedlName(lname);
-    setResult(studentName.current.value);
+    // setSubmittedlName(lname);
+    setSubmittedName(name.current.value);
 
   }
 
@@ -20,8 +20,8 @@ function Dform() {
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          ref={name}
+          
           placeholder="Enter your name"
         />
 
@@ -29,7 +29,7 @@ function Dform() {
       </form>
 
 
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input
           value={lname}
           onChange={(e) => setlname(e.target.value)}
@@ -37,9 +37,9 @@ function Dform() {
         />
         
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
             <h2>Submitted Name: {submittedName}</h2>
-      <h2>Submitted Name: {submittedlName}</h2>
+      {/* <h2>Submitted Name: {submittedlName}</h2> */}
     </div>
     
   );
