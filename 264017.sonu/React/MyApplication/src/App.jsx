@@ -1,31 +1,19 @@
-﻿import { ConditionalRenedering } from "./components/ConditionalRendering";
-import Counter from "./components/Counter";
-import Dform from "./components/Dform";
-import MyProfile from "./components/MyProfile";
-import State from "./components/State";
+﻿
+import { ThemeContext } from './Context';
+import Child from './component/Child.jsx';
+import { useState } from 'react';
 
-function App() {
-  const details = {
-    name: "Sonu kumar",
-    class: "MCA",
-    college: "MAIMT",
-  };
-  const subjects = ["JAVA", "DS", "CST"];
+const App = () => {
+  const[theme, setTheme] = useState("dark");
 
   return (
-    <div>
-      <ul>
-        <li>
-          <MyProfile studentDetails={details} skills={subjects} />
-          <h1>This is my first App</h1>
-        </li>
-      </ul>
-      {/* <ConditionalRenedering />
-      <State />
-      <Counter /> */}
-      <Dform/>
-    </div>
-  );
+    <>
+    <ThemeContext.Provider value={{theme,setTheme}}>
+      <Child/>
+    </ThemeContext.Provider>
+    </>
+    
+  )
 }
 
-export default App;
+export default App
