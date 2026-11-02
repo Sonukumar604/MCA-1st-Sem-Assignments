@@ -1,18 +1,19 @@
 ﻿
-import { ThemeContext } from './Context';
+
+
 import Child from './component/Child.jsx';
 import { useState } from 'react';
+import { HeaderContextAPI } from './component/ContextAPI/HeaderContextAPI.jsx';
 
 const App = () => {
   const[theme, setTheme] = useState("dark");
 
   return (
     <>
-    <ThemeContext.Provider value={{theme,setTheme}}>
+    <HeaderContextAPI.Provider value={{theme,setTheme}}>
       <Child/>
-    </ThemeContext.Provider>
+    </HeaderContextAPI.Provider>
     </>
-    
   )
 }
 
