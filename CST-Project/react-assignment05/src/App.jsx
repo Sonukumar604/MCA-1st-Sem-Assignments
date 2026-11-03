@@ -4,6 +4,8 @@ import Home from './components/Home/Home'
 import About from './components/Aboutus/About'
 import Contact from './components/Contactus/Contact'
 import Navbar from './components/Navbar/Navbar'
+import Product from './components/product/Product'
+import Login from './components/Login/login'
 const App = () => {
   return (
     <div>
@@ -13,7 +15,11 @@ const App = () => {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/navbar' element={<Navbar/>}/>
-        <Route path='/Login' element={<Login/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/product/:id' element={<Product/>}/>
+
+        
+        
 
       </Routes>
       <nav>
@@ -21,6 +27,10 @@ const App = () => {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/navbar">Navbar</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/product">Product</Link>
+
+
 
       </nav>
       </BrowserRouter>
