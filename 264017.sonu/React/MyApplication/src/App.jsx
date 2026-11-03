@@ -1,18 +1,22 @@
 ﻿
 
+import Login from './component/Login.jsx';
 
-import Child from './component/Child.jsx';
 import { useState } from 'react';
-import { HeaderContextAPI } from './component/ContextAPI/HeaderContextAPI.jsx';
+import {  LoginContextAPI } from './component/ContextAPI/HeaderContextAPI.jsx';
 
 const App = () => {
-  const[theme, setTheme] = useState("dark");
-
+  
+const [login, setLogin] = useState(false);
   return (
     <>
-    <HeaderContextAPI.Provider value={{theme,setTheme}}>
+    {/* <HeaderContextAPI.Provider value={{theme,setTheme}}>
       <Child/>
-    </HeaderContextAPI.Provider>
+    </HeaderContextAPI.Provider> */}
+    <LoginContextAPI.Provider value={{login,setLogin}}>
+      <Login/>
+    </LoginContextAPI.Provider>
+
     </>
   )
 }
